@@ -90,7 +90,7 @@
         <form action="{{ route("objava.komentari.store", $objava->id) }}" method="POST">
             @csrf
             <div class="mb-3">
-                <textarea name="sadrzaj" class="fs-6 form-control" rows="1"></textarea>
+                <textarea name="sadrzaj" class="fs-6 form-control" rows="1" required></textarea>
             </div>
             <div>
                 <button type="submit" class="btn btn2-outline-custom-color btn-sm"> Komentiraj </button>

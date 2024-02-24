@@ -42,8 +42,12 @@
                     </span> {{ $user->followings()->count() }} </a>
                 <a href="#" onclick="scrollByPixels(300)" class="fw-light nav-link fs-6 me-3"> <span class="fa-solid fa-images me-1">
                     </span> {{ $user->objave()->count() }} </a>
-                <a href="#" class="fw-light nav-link fs-6"> <span class="fa-solid fa-message me-1">
+                <a style="padding-right: 15px" href="#" class="fw-light nav-link fs-6"> <span class="fa-solid fa-message me-1">
                     </span> {{ $user->komentari()->count() }} </a>
+                @if(Auth::check() && Auth::user()->id === $user->id)
+                <a href="#" data-bs-toggle="modal" data-bs-target="#likedPostsModal" class="fw-light nav-link fs-6 me-3"> <span class="fas fa-heart">
+                    </span> {{ $user->likes()->count() }}  </a>
+                @endif
             </div>
 
             <div class="modal fade" id="followersModal" tabindex="-1" aria-labelledby="followersModalLabel" aria-hidden="true">
@@ -85,6 +89,26 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="likedPostsModal" tabindex="-1" aria-labelledby="likedPostsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="color: #00437a" class="modal-title" id="likedPostsModalLabel">Objave označene sa "sviđa mi se" <i class="fas fa-heart"></i></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @foreach ($user->likes as $likedPost)
+                        <div class="d-flex align-items-center mb-2">
+                            <img style="width:40px" class="avatar-sm rounded-circle me-2" src="{{ $likedPost->user->getImageURL() }}">
+                            <a style="color: #00437a; text-decoration: none" href="{{ route('objava.show', $likedPost->id) }}">{{ strlen($likedPost->objava) > 50 ? substr($likedPost->objava, 0, 50) . '...' : $likedPost->objava }}</a>
+                        </div>
+                        <hr>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>    
         
             @auth()
 
@@ -117,6 +141,10 @@
 <style>
     .fa-user-friends:hover, .fa-user:hover, .fa-images:hover, .fa-message:hover{
         color: #00437a;
+    }
+
+    .fa-heart:hover{
+        color: #ed1c24;
     }
 
     .btnotp-outline-custom-color{

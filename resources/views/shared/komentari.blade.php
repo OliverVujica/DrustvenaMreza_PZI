@@ -3,7 +3,7 @@
     <form action="{{ route("objava.komentari.store", $objava->id) }}" method="POST">
         @csrf
         <div class="mb-3">
-            <textarea name="sadrzaj" class="fs-6 form-control" rows="1"></textarea>
+            <textarea name="sadrzaj" class="fs-6 form-control" rows="1" required></textarea>
         </div>
         <div>
             <button type="submit" class="btn btn2-outline-custom-color btn-sm"> Objavi komentar </button>
@@ -19,7 +19,7 @@
             alt="{{ $komentar->user->name }}">
         <div class="w-100">
             <div class="d-flex justify-content-between">
-                <h6 class=""> <a class="text-decoration-none link-dark" href="{{ route('users.show', $komentar->user->id) }}"> {{ $komentar->user->username }}  </a>
+                <h6 class=""> <a class="text-decoration-none link-dark" href="{{ route('users.show', $komentar->user->id) }}"> <span class="fs-6 text-muted">{{'@' . $komentar->user->username }}</span> </a>
                 </h6>
 
                 <div>

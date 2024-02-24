@@ -30,7 +30,7 @@ class ObjavaController extends Controller
 
         // Validacija objave, da ne smije biti prazna, minimalno 5 znakova, najvise 500!
         $validated = request()->validate([
-            'objava' => 'required|min:3|max:500',
+            'objava' => 'required|min:3|max:2000',
             'image' => 'image',
             'headline' => 'max:100'
         ]);
@@ -70,7 +70,7 @@ class ObjavaController extends Controller
         $this->authorize('objava.edit', $objava);
 
         $validated = request()->validate([
-            'objava' => 'required|min:3|max:500',
+            'objava' => 'required|min:3|max:2000',
             'image' => 'image',
         ]);
 
