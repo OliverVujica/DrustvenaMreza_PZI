@@ -98,13 +98,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    @foreach ($user->likes as $likedPost)
+                    @foreach ($user->likes()->paginate(10) as $likedPost)
                         <div class="d-flex align-items-center mb-2">
                             <img style="width:40px" class="avatar-sm rounded-circle me-2" src="{{ $likedPost->user->getImageURL() }}">
                             <a style="color: #00437a; text-decoration: none" href="{{ route('objava.show', $likedPost->id) }}">{{ strlen($likedPost->objava) > 50 ? substr($likedPost->objava, 0, 50) . '...' : $likedPost->objava }}</a>
                         </div>
                         <hr>
                     @endforeach
+
+                    {{ $user->likes()->paginate(10)->links() }}
                 </div>
             </div>
         </div>

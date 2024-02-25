@@ -4,7 +4,7 @@
     <form action="{{ route('objava.create') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <textarea name='objava' class="form-control" id="idea" rows="3"></textarea>
+            <textarea name='objava' class="form-control" id="idea" rows="3" required></textarea>
             <!-- Ako imamo gresku u objavi, postavljena u kontroleru za objavu, koristi blade funkciju error -->
             @error('objava')
                 <span class='d-block -6 text-danger mt-2'> {{ $message }} </span>

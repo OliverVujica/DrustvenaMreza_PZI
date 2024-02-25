@@ -12,7 +12,11 @@ class DashboardController extends Controller
         $objava = Objava::with('user', 'komentari.user')->orderBy('created_at', 'desc');
 
         if(request()->has('search')) {
-            $objava = $objava->where('objava', 'like', '%' . request()->get('search', '') . '%');
+
+            $objava = $objava->where('objava', 'like', '%' . request()->get('search', '') . '%')
+                ->orWhereHas('user', function($query) {
+                    $query->where('name', 'like', '%' . request()->get('search', '') . '%');
+                });
         }
 
         return view('dashboard', [
