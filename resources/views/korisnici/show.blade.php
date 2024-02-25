@@ -18,7 +18,7 @@
                         @include('shared.kartica_objave')
                     </div>
                 @empty
-                    <p class="text-center my-3">Nema objava za pretragu</p>
+                    <p style="font-family: Arial, Helvetica, sans-serif" class="text-center my-3">Korisnik nema objava</p>
                 @endforelse
 
                 <div class="mt-3">
