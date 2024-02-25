@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> SUM Drustvena Mreza </title>
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
+
+    <title> SUM Mreza </title>
 
     <link href="https://bootswatch.com/5/litera/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
