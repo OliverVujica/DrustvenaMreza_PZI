@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary"
+<nav class="navbar navbar-expand-md bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary"
         data-bs-theme="secondary"> <!-- data-bs-theme="dark" -->
         <div class="container">
             <a class="navbar-brand fw-light" href="/">
@@ -12,8 +12,8 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <ul class="nav nav-underline">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav nav-underline me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a style="color: #00437a" class="{{ (Route::is('dashboard')) ? 'nav-link active' : '' }} nav-link" href="{{ route('dashboard') }}">Početna</a>
                 </li>
@@ -61,6 +61,7 @@
                 </ul>
             </div>
         </div>
+    </div>
     </nav>
 
 <style>

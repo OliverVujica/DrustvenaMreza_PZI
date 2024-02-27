@@ -2,10 +2,9 @@
 
 @section('content')
 <div class="row">
-            <div class="col-3">
-                
-            </div>
-            <div class="col-6">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+            <div class="mt-3">
                 @include('shared.success-msg')
                 <div class="mt-3">
                     @include('shared.user-edit')                    

@@ -1,8 +1,8 @@
 @extends('layout.layout')
 
 @section('content')
-<div class="row" style="margin-left: 20%; margin-right: 20%">   
-            <div>
+<div class="row">   
+            <div class="col-md-8 offset-md-2">
                 @include('shared.success-msg')
                 <div class="mt-3">
                     <div class="card">

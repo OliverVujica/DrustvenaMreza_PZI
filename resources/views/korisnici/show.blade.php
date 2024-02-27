@@ -3,10 +3,9 @@
 
 @section('content')
 <div class="row">
-            <div class="col-2">
-                
-            </div>
-            <div class="col-8">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+            <div class="mt-3">
                 @include('shared.success-msg')
                 <div class="mt-3">
                     @include('shared.kartica_korisnika')                  
