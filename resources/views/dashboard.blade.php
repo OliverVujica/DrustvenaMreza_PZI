@@ -3,6 +3,7 @@
 
 @section('content')
 
+@if($objave->currentPage() === 1)
 @guest
     <div class="w-full text-center py-32" style="margin-top: 10%">
         <h1 class="h1 mt-5" style="margin-top: 2%; margin-bottom: 2%">
@@ -15,6 +16,7 @@
     </div>
     
 @endguest
+@endif
 
 <div class="row">
             

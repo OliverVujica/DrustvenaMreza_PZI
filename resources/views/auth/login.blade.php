@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-12 col-sm-6 col-md-5">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-5">
         <form class="form mt-5" action="{{ route('login') }}" method="post">
             @csrf
             <h3 class="text-center text-dark">Prijava</h3>
@@ -24,11 +24,11 @@
             </div>
 
             <div class="form-group">
-                <label for="remember-me" class="text-dark"></label><br>
+                <br>
                 <input type="submit" name="submit" class="btn btn5-outline-custom-color btn-md" value="Prijavite se">
             </div>
 
-            <div class="text-right mt-2" style="padding-top: 40px">
+            <div class="text-center mt-2">
                 <a href="/register" class="regi">Novi ste na mreži? Registrirajte se ovdje</a>
             </div>
         </form>
@@ -41,6 +41,7 @@
         width: 80%;   
         margin-left: 10%;
         height: 40px;
+        margin-bottom: 20px;
     }
     .btn5-outline-custom-color:hover {
         border-color: #00437a;
@@ -55,7 +56,6 @@
     .regi {
         color: #8d8d8d;
         text-decoration: none;
-        margin-left: 20%;
         font-weight: bold;
     }
     

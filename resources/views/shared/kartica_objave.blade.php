@@ -75,7 +75,7 @@
         </div>
         <div class="d-flex mb-2">
             @include('objave.shared.like-button')
-            <div style="margin-right: 2%">
+            
             @auth()
             <a href="{{ route('objava.show', $objava->id) }}" class="fw-light nav-link fs-6"> <span class="far fa-comment me-1">
             </span> {{ $objava->komentari()->count() }} </a>
@@ -84,7 +84,7 @@
             <a href="{{ route('login') }}" class="fw-light nav-link fs-6"> <span class="far fa-comment me-1">
                 </span> {{ $objava->komentari()->count() }} </a>
             @endguest
-            </div>
+            
         </div>
         @auth()
         <form action="{{ route("objava.komentari.store", $objava->id) }}" method="POST">
